@@ -1,0 +1,63 @@
+service: ${self:custom.SKILL_NAMESPACE}
+
+plugins:
+  - serverless-alexa-skills
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ${env:AWS_REGION_NAME}
+  environment:
+    SKILL_NAME: ${self:custom.SKILL_NAME}
+
+custom:
+  stages:
+    - tst
+    - prd
+  SKILL_NAME: Gerador de desculpas
+  SKILL_INVOCATION_TEXT: gerador de desculpas
+  SKILL_NAME_MANIFEST: GeradorDeDesculpas
+  SKILL_NAMESPACE: sls-migue-generator-alexa-skill
+  PORT: 9000
+  alexa:
+    vendorId: ${env:ALEXA_VENDOR_ID}
+    clientId: ${env:ALEXA_CLIENT_ID}
+    clientSecret: ${env:ALEXA_CLIENT_SECRET}
+    localServerPort: ${self:custom.PORT}
+    skills:
+      - id: ${env:ALEXA_SKILL_ID}
+        manifest:
+          publishingInformation:
+            locales:
+              pt-BR:
+                name: ${self:custom.SKILL_NAME_MANIFEST}
+          apis:
+            custom:
+              endpoint:
+                uri: ${env:AWS_ENDPOINT_ARN}
+          manifestVersion: "1.0"
+        models:
+          pt-BR:
+            interactionModel:
+              languageModel:
+                invocationName: ${self:custom.SKILL_INVOCATION_TEXT}
+                intents:
+                  - name: ApologyIntent
+                    samples:
+                      - "me vê uma desculpa"
+                      - "me vê uma desculpa ai"
+                      - "precido de uma desculpa"
+                      - "socorro"
+                  - name: AMAZON.HelpIntent
+                    samples: []
+                  - name: AMAZON.CancelIntent
+                    samples: []
+                  - name: AMAZON.StopIntent
+                    samples: []
+
+functions:
+  apologyHandler:
+    handler: src/index.apologyHandler
+    events:
+      - alexaSkill: ${env:ALEXA_SKILL_ID}
