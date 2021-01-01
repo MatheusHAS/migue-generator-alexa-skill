@@ -13,23 +13,29 @@ $ yarn
 
 ## Step 1 - How to configurate to deploy
 
-- 1º: auth in alexa developer console using => `sls alexa auth`
+- 1º: Create developer account in [Amazon.com](https://developer.amazon.com)
 
-  PS: In the first time, create your security profile. After created, you can take your `ALEXA_CLIENT_ID` and `ALEXA_CLIENT_SECRET`.
+- 2º: Create a [security profile on this page](https://developer.amazon.com/settings/console/securityprofile/web-settings/view.html) and configure: `Allowed Origins` and `Allowed return urls`.
 
-- 2º: create your skill in the alexa developer console using => `sls alexa create --name SKILL_NAME --locale pt-BR --type custom`
+  > PS: In the first time, create your security profile. After created, you can take your `ALEXA_CLIENT_ID` and `ALEXA_CLIENT_SECRET`.
 
-  You obtain your `ALEXA_SKILL_ID`.
+- 3º: auth in alexa developer console using => `sls alexa auth`
 
-  After create, this skill is available in [this page](https://developer.amazon.com/alexa/console/ask)
+  > PS: To any errors, check details.
 
-- 3º: deploy your application using => `sls deploy --stage prd` or `sls deploy --stage tst`
+- 4º: create your skill in the alexa developer console using => `sls alexa create --name SKILL_NAME --locale pt-BR --type custom`
 
-  This stage need to create your `AWS_ENDPOINT_ARN`, you can take your `ARN` in [aws developer console - lambda page](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions).
+  > You obtain your `ALEXA_SKILL_ID`.
 
-  PS: If you dont see your function, check your `region` at the top right corner.
+  > After create, this skill is available in [this page](https://developer.amazon.com/alexa/console/ask)
 
-- 4º: Get your `ALEXA_VENDOR_ID` in [this page](https://developer.amazon.com/settings/console/mycid)
+- 5º: deploy your application using => `sls deploy --stage prd` or `sls deploy --stage tst`
+
+  > This stage need to create your `AWS_ENDPOINT_ARN`, you can take your `ARN` in [aws developer console - lambda page](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions).
+
+  > PS: If you dont see your function, check your `region` at the top right corner.
+
+- 6º: Get your `ALEXA_VENDOR_ID` in [this page](https://developer.amazon.com/settings/console/mycid)
 
 ## Step 2 - set your ENVIRONMENT VARS
 
@@ -54,6 +60,6 @@ export AWS_REGION_NAME="YOUR_AWS_REGION_NAME_HERE" # Your region used in AWS acc
 
 # TODO:
 
-- [ ] Use `github actions` to deploy using `serverless framework` on merge PR
+- [x] Use `github actions` to deploy using `serverless framework` on merge PR
 
 - [ ] Add [commit linter](https://github.com/conventional-changelog/commitlint#getting-started)
