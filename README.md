@@ -1,7 +1,7 @@
 # migue-generator-alexa-skill
 
-- Need AWS Account - To host your lambda function
-- (aws-cli)[https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-install.html] is required
+- Need [AWS Account](https://aws.amazon.com/pt/free) - To host your lambda function
+- [aws-cli](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-install.html) is required
 
 ## Install
 
@@ -50,9 +50,9 @@ export AWS_REGION_NAME="YOUR_AWS_REGION_NAME_HERE" # Your region used in AWS acc
 
 - 2º: deploy your amazon skill using => `sls alexa build`
 
-- 3º: Access (amazon alexa developer console)[https://developer.amazon.com/alexa/console/ask] and select option `test` in you skill. And change `Skill testing is enabled in` to `development` and test in your `alexa` or in your `browser` using this page.
+- 3º: Access [amazon alexa developer console](https://developer.amazon.com/alexa/console/ask) and select option `test` in you skill. And change `Skill testing is enabled in` to `development` and test in your `alexa` or in your `browser` using this page.
 
 ### TODO:
 
-[] Use `github actions` to deploy using `serverless framework` on merge PR
-[] Add (commit linter)[https://github.com/conventional-changelog/commitlint#getting-started]
+[ ] Use `github actions` to deploy using `serverless framework` on merge PR
+[ ] Add [commit linter](https://github.com/conventional-changelog/commitlint#getting-started)
