@@ -52,7 +52,8 @@ export AWS_REGION_NAME="YOUR_AWS_REGION_NAME_HERE" # Your region used in AWS acc
 
 - 3º: Access [amazon alexa developer console](https://developer.amazon.com/alexa/console/ask) and select option `test` in you skill. And change `Skill testing is enabled in` to `development` and test in your `alexa` or in your `browser` using this page.
 
-### TODO:
+# TODO:
 
-[ ] Use `github actions` to deploy using `serverless framework` on merge PR
-[ ] Add [commit linter](https://github.com/conventional-changelog/commitlint#getting-started)
+- [ ] Use `github actions` to deploy using `serverless framework` on merge PR
+
+- [ ] Add [commit linter](https://github.com/conventional-changelog/commitlint#getting-started)
