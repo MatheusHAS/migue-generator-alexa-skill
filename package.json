@@ -1,0 +1,21 @@
+{
+  "name": "migue-generator-alexa-skill",
+  "version": "0.0.1",
+  "description": "Alexa Migué generator skill",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "sls deploy --stage prd && sls alexa build",
+    "deploy:aws": "sls deploy --stage prd",
+    "deploy:alexa": "sls alexa build"
+  },
+  "author": "Matheus Azambuja <matheushenrique.ads@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ask-sdk-core": "^2.0.7",
+    "ask-sdk-model": "^1.4.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "serverless-alexa-skills": "0.0.6"
+  }
+}
