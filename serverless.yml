@@ -2,6 +2,7 @@ service: ${self:custom.SKILL_NAMESPACE}
 
 plugins:
   - serverless-alexa-skills
+  - serverless-plugin-typescript
 
 provider:
   name: aws

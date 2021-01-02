@@ -1,6 +1,6 @@
 {
   "name": "migue-generator-alexa-skill",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Alexa Migué generator skill",
   "main": "src/index.js",
   "scripts": {
@@ -12,10 +12,13 @@
   "license": "MIT",
   "dependencies": {
     "ask-sdk-core": "^2.0.7",
-    "ask-sdk-model": "^1.4.1",
-    "request": "^2.88.0"
+    "ask-sdk-model": "^1.4.1"
   },
   "devDependencies": {
-    "serverless-alexa-skills": "0.0.6"
+    "@types/node": "^14.14.19",
+    "serverless-alexa-skills": "0.0.6",
+    "serverless-plugin-typescript": "^1.1.9",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }
